@@ -63,6 +63,7 @@ img {
 
 .slider-controls {
   grid-area: controls;
+  justify-self: end;
 }
 
 .slider-images,
