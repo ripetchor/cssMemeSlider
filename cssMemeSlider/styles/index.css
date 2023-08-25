@@ -51,3 +51,29 @@ img {
   row-gap: 2rem;
   height: 100vh;
 }
+
+.slider-images {
+  grid-area: images;
+}
+
+.slider-descriptions {
+  grid-area: descriptions;
+}
+
+.slider-controls {
+  grid-area: controls;
+}
+
+.slider-images,
+.slider-descriptions {
+  overflow-x: hidden;
+}
+
+.slider-images-track,
+.slider-descriptions-track {
+  display: flex;
+}
+
+.slider-description {
+  flex: 1 0 100%;
+}
