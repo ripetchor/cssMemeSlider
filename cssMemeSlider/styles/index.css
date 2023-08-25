@@ -1,0 +1,9 @@
+:root {
+  --font-size-html: 62.5%;
+  --color-dark: #1a1a1a;
+  --color-light: #eee;
+  --color-crimson: crimson;
+  --color-green: #42b883;
+  --color-green-lighter: #35eb9a;
+  --transition-duration-timing-function: 0.5s linear;
+}
