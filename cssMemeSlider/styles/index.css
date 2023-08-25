@@ -51,6 +51,15 @@ img {
     'images images'
     'descriptions controls';
   row-gap: 2rem;
+
+  @media (width <= 31.25em) {
+    grid-template-columns: 1fr;
+    grid-template-rows: 5fr 1fr 2fr;
+    grid-template-areas:
+      'images'
+      'controls'
+      'descriptions';
+  }
 }
 
 .slider-images {
@@ -65,6 +74,10 @@ img {
 .slider-controls {
   grid-area: controls;
   justify-self: end;
+
+  @media (width <= 31.25em) {
+    justify-self: center;
+  }
 }
 
 .slider-images,
