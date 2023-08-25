@@ -80,3 +80,52 @@ img {
 .slider-description {
   flex: 1 0 100%;
 }
+
+.slider-controls {
+  align-self: start;
+  display: flex;
+}
+
+.slider-controls .label,
+.slider-controls .input {
+  border-radius: 50%;
+}
+
+.slider-controls .label {
+  padding: 1rem;
+}
+
+.slider-controls .input {
+  width: 2rem;
+  height: 2rem;
+  appearance: none;
+  border: 0.5rem solid color-mix(in srgb, var(--color-crimson) 100%, transparent 90%);
+  transition: all 0.2s linear;
+}
+
+.slider-controls .input:checked {
+  width: 2rem;
+  height: 2rem;
+  border-color: var(--color-green-lighter);
+  background-color: var(--color-green-lighter);
+  transform: scale(1.4);
+}
+
+.slider-controls .input:active {
+  transform: scale(1.2);
+}
+
+@media (hover: hover) {
+  .slider-controls .label:hover,
+  .slider-controls .label:hover .input {
+    cursor: pointer;
+  }
+
+  .slider-controls .label:hover .input {
+    border-color: var(--color-crimson);
+  }
+
+  .slider-controls .label:hover .input:checked {
+    border-color: var(--color-green-lighter);
+  }
+}
