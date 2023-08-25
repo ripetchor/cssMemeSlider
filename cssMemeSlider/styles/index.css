@@ -59,6 +59,7 @@ img {
 
 .slider-descriptions {
   grid-area: descriptions;
+  font-size: clamp(1.6rem, 1.22rem + 1.9vw, 3.5rem);
 }
 
 .slider-controls {
