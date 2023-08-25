@@ -33,3 +33,10 @@ img {
   max-width: 100%;
   height: auto;
 }
+
+.wrapper {
+  display: grid;
+  grid-template-columns: 1fr;
+  place-items: center;
+  padding: 2rem;
+}
