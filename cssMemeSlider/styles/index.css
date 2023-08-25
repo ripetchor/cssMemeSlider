@@ -50,6 +50,7 @@ img {
   grid-template-areas:
     'images images'
     'descriptions controls';
+  align-items: center;
   row-gap: 2rem;
 
   @media (width <= 31.25em) {
@@ -74,6 +75,7 @@ img {
 .slider-controls {
   grid-area: controls;
   justify-self: end;
+  display: flex;
 
   @media (width <= 31.25em) {
     justify-self: center;
@@ -93,11 +95,6 @@ img {
 
 .slider-description {
   flex: 1 0 100%;
-}
-
-.slider-controls {
-  align-self: start;
-  display: flex;
 }
 
 .slider-controls .label,
