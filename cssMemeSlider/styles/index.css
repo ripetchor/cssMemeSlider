@@ -40,3 +40,14 @@ img {
   place-items: center;
   padding: 2rem;
 }
+
+.slider {
+  display: grid;
+  grid-template-columns: 4fr 1fr;
+  grid-template-rows: 4fr 1fr;
+  grid-template-areas:
+    'images images'
+    'descriptions controls';
+  row-gap: 2rem;
+  height: 100vh;
+}
