@@ -1,0 +1,170 @@
+:root {
+  --font-size-html: 62.5%;
+  --color-dark: #1a1a1a;
+  --color-light: #eee;
+  --color-crimson: crimson;
+  --color-green: #42b883;
+  --color-green-lighter: #35eb9a;
+  --transition-duration-timing-function: 0.5s linear;
+}
+
+html {
+  box-sizing: border-box;
+  height: 100%;
+  font-size: var(--font-size-html);
+}
+
+* {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  height: 100%;
+  font-family: system-ui, sans-serif;
+  text-rendering: optimizeLegibility;
+  color: var(--color-light);
+  background-color: var(--color-dark);
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+.wrapper {
+  display: grid;
+  grid-template-columns: 1fr;
+  place-items: center;
+  padding: 2rem;
+  height: 100dvh;
+}
+
+.slider {
+  max-width: 100rem;
+  display: grid;
+  grid-template-columns: 4fr 1fr;
+  grid-template-rows: 4fr 1fr;
+  grid-template-areas:
+    'images images'
+    'descriptions controls';
+  align-items: center;
+  row-gap: 2rem;
+
+  @media (width <= 31.25em) {
+    grid-template-columns: 1fr;
+    grid-template-rows: 5fr 1fr 2fr;
+    grid-template-areas:
+      'images'
+      'controls'
+      'descriptions';
+  }
+}
+
+.slider-images {
+  grid-area: images;
+}
+
+.slider-descriptions {
+  grid-area: descriptions;
+  font-size: clamp(1.6rem, 1.22rem + 1.9vw, 3.5rem);
+
+  @media (width <= 31.25em) {
+    align-self: start;
+  }
+}
+
+.slider-controls {
+  grid-area: controls;
+  justify-self: end;
+  display: flex;
+
+  @media (width <= 31.25em) {
+    justify-self: center;
+  }
+}
+
+.slider-images,
+.slider-descriptions {
+  overflow-x: hidden;
+}
+
+.slider-images-track,
+.slider-descriptions-track {
+  display: flex;
+  transition: transform var(--transition-duration-timing-function);
+}
+
+.slider-description {
+  flex: 1 0 100%;
+}
+
+.slider-controls .label,
+.slider-controls .input {
+  border-radius: 50%;
+}
+
+.slider-controls .label {
+  padding: 1rem;
+}
+
+.slider-controls .input {
+  width: 2rem;
+  height: 2rem;
+  appearance: none;
+  border: 0.5rem solid color-mix(in srgb, var(--color-crimson) 100%, transparent 90%);
+  transition: all 0.2s linear;
+}
+
+.slider-controls .input:checked {
+  width: 2rem;
+  height: 2rem;
+  border-color: var(--color-green-lighter);
+  background-color: var(--color-green-lighter);
+  transform: scale(1.4);
+}
+
+.slider-controls .input:active {
+  transform: scale(1.2);
+}
+
+@media (hover: hover) {
+  .slider-controls .label:hover,
+  .slider-controls .label:hover .input {
+    cursor: pointer;
+  }
+
+  .slider-controls .label:hover .input {
+    border-color: var(--color-crimson);
+  }
+
+  .slider-controls .label:hover .input:checked {
+    border-color: var(--color-green-lighter);
+  }
+}
+
+.slider:has(#slider-input-1:checked) :where(.slider-images-track, .slider-descriptions-track) {
+  transform: translateX(0);
+}
+
+.slider:has(#slider-input-2:checked) :where(.slider-images-track, .slider-descriptions-track) {
+  transform: translateX(-100%);
+}
+
+.slider:has(#slider-input-3:checked) :where(.slider-images-track, .slider-descriptions-track) {
+  transform: translateX(-200%);
+}
+
+.slider:has(#slider-input-4:checked) :where(.slider-images-track, .slider-descriptions-track) {
+  transform: translateX(-300%);
+}
+
+.slider:has(#slider-input-5:checked) :where(.slider-images-track, .slider-descriptions-track) {
+  transform: translateX(-400%);
+}
+
+.slider:has(#slider-input-6:checked) :where(.slider-images-track, .slider-descriptions-track) {
+  transform: translateX(-500%);
+}
