@@ -75,6 +75,7 @@ img {
 .slider-images-track,
 .slider-descriptions-track {
   display: flex;
+  transition: transform var(--transition-duration-timing-function);
 }
 
 .slider-description {
@@ -128,4 +129,28 @@ img {
   .slider-controls .label:hover .input:checked {
     border-color: var(--color-green-lighter);
   }
+}
+
+.slider:has(#slider-input-1:checked) :where(.slider-images-track, .slider-descriptions-track) {
+  transform: translateX(0);
+}
+
+.slider:has(#slider-input-2:checked) :where(.slider-images-track, .slider-descriptions-track) {
+  transform: translateX(-100%);
+}
+
+.slider:has(#slider-input-3:checked) :where(.slider-images-track, .slider-descriptions-track) {
+  transform: translateX(-200%);
+}
+
+.slider:has(#slider-input-4:checked) :where(.slider-images-track, .slider-descriptions-track) {
+  transform: translateX(-300%);
+}
+
+.slider:has(#slider-input-5:checked) :where(.slider-images-track, .slider-descriptions-track) {
+  transform: translateX(-400%);
+}
+
+.slider:has(#slider-input-6:checked) :where(.slider-images-track, .slider-descriptions-track) {
+  transform: translateX(-500%);
 }
