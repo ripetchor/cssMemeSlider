@@ -7,3 +7,29 @@
   --color-green-lighter: #35eb9a;
   --transition-duration-timing-function: 0.5s linear;
 }
+
+html {
+  box-sizing: border-box;
+  height: 100%;
+  font-size: var(--font-size-html);
+}
+
+* {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  height: 100%;
+  font-family: system-ui, sans-serif;
+  text-rendering: optimizeLegibility;
+  color: var(--color-light);
+  background-color: var(--color-dark);
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
